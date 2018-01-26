@@ -72,7 +72,7 @@ public class Worker {
    * generation phase.
    */
   public void execute() {
-    System.out.println("Main execution starts for " + INPUT_FILENAME + " file");
+    System.out.println("Main execution starts for '" + INPUT_FILENAME + "'");
 
     // Initial input acquisition
     inputData = utils.read();

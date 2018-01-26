@@ -30,9 +30,9 @@ package it.gdgtorino.hashcode.model;
  */
 public class Cell {
 
-  private String ingredient = null;
-  private Integer x = null;
-  private Integer y = null;
+  private String ingredient;
+  private Integer x;
+  private Integer y;
 
   public Cell(char ingredient, Integer x, Integer y) {
     this.ingredient = String.valueOf(ingredient);
