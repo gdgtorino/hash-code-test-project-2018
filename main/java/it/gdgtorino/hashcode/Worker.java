@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- * Copyright 2017 Google Developer Group Torino.
+ * Copyright 2018 Google Developer Group Torino.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -38,56 +38,54 @@ import static it.gdgtorino.hashcode.utils.Constants.INPUT_FILENAME;
  */
 public class Worker {
 
-    private InputData inputData; // this will hold the input data
-    private OutputData outputData; // this will hold the output data
-    private final Utility utils;
+  private InputData inputData; // this will hold the input data
+  private OutputData outputData; // this will hold the output data
+  private final Utility utils;
 
-    /**
-     * Private constructor; it's not available outside this class.
-     */
-    private Worker () {
-        utils = Utility.getInstance();
-    }
+  /**
+   * Private constructor; it's not available outside this class.
+   */
+  private Worker() {
+    utils = Utility.getInstance();
+  }
 
-    /**
-     * The method return the same Worker instance all the time.
-     *
-     * @return Worker
-     */
-    public static Worker getInstance () {
-        return WorkerHolder.INSTANCE;
-    }
+  /**
+   * The method return the same Worker instance all the time.
+   *
+   * @return Worker
+   */
+  public static Worker getInstance() {
+    return WorkerHolder.INSTANCE;
+  }
 
-    /**
-     * This inner class contains the unique Worker class instance.
-     */
-    private static class WorkerHolder {
+  /**
+   * This inner class contains the unique Worker class instance.
+   */
+  private static class WorkerHolder {
 
-        private static final Worker INSTANCE = new Worker();
-    }
+    private static final Worker INSTANCE = new Worker();
+  }
 
-    /**
-     * Main method for Worker class; it executes the real algorithm.
-     * The structure of this method consists in:
-     * 1. initial input acquisition phase;
-     * 2. intermediate elaboration;
-     * 3. output generation phase.
-     */
-    public void execute () {
-        System.out.println("Main execution starts for " + INPUT_FILENAME + " file");
+  /**
+   * Main method for Worker class; it executes the real algorithm. The structure of this method
+   * consists in: 1. initial input acquisition phase; 2. intermediate elaboration; 3. output
+   * generation phase.
+   */
+  public void execute() {
+    System.out.println("Main execution starts for " + INPUT_FILENAME + " file");
 
-        // Initial input acquisition
-        inputData = utils.read();
+    // Initial input acquisition
+    inputData = utils.read();
 
-        // Intermediate elaboration
-        outputData = new OutputData();
-        outputData.setFirstValue(inputData.getFirstValue() + inputData.getSecondValue());
-        outputData.setSecondValue(inputData.getThirdValue() - inputData.getFourthValue());
-        System.out.println("Output data created: " + outputData.toString());
+    // Intermediate elaboration
+    outputData = new OutputData();
+    outputData.setFirstValue(inputData.getFirstValue() + inputData.getSecondValue());
+    outputData.setSecondValue(inputData.getThirdValue() - inputData.getFourthValue());
+    System.out.println("Output data created: " + outputData.toString());
 
-        // Final output generation
-        utils.write(outputData);
+    // Final output generation
+    utils.write(outputData);
 
-        System.out.println("Main execution correctly completed");
-    }
+    System.out.println("Main execution correctly completed");
+  }
 }
