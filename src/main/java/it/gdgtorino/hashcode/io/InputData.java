@@ -31,70 +31,63 @@ package it.gdgtorino.hashcode.io;
 public class InputData {
 
   // First line values
-  private int firstValue;
-  private int secondValue;
-  private int thirdValue;
-  private int fourthValue;
+  private Integer row = null;
+  private Integer column = null;
+  private Integer numIngredientsPerSlice = null;
+  private Integer maxCellsPerSlice = null;
 
   // Following lines data
-  private Object data; // this is just a placeholder for the real data-structure
+  private List<List<Cell>> data; // this is just a placeholder for the real data-structure
 
   public InputData() {
   }
 
-  public InputData(int firstValue, int secondValue, int thirdValue, int fourthValue, Object data) {
-    this.firstValue = firstValue;
-    this.secondValue = secondValue;
-    this.thirdValue = thirdValue;
-    this.fourthValue = fourthValue;
+  public InputData(Integer row, Integer column, Integer numIngredientsPerSlice,
+      Integer maxCellsPerSlice, List<List<Cell>> data) {
+    this.row = row;
+    this.column = column;
+    this.numIngredientsPerSlice = numIngredientsPerSlice;
+    this.maxCellsPerSlice = maxCellsPerSlice;
     this.data = data;
   }
 
-  public int getFirstValue() {
-    return firstValue;
+  public Integer getRow() {
+    return row;
   }
 
-  public void setFirstValue(int firstValue) {
-    this.firstValue = firstValue;
+  public void setRow(Integer row) {
+    this.row = row;
   }
 
-  public int getSecondValue() {
-    return secondValue;
+  public Integer getColumn() {
+    return column;
   }
 
-  public void setSecondValue(int secondValue) {
-    this.secondValue = secondValue;
+  public void setColumn(Integer column) {
+    this.column = column;
   }
 
-  public int getThirdValue() {
-    return thirdValue;
+  public Integer getNumIngredientsPerSlice() {
+    return numIngredientsPerSlice;
   }
 
-  public void setThirdValue(int thirdValue) {
-    this.thirdValue = thirdValue;
+  public void setNumIngredientsPerSlice(Integer numIngredientsPerSlice) {
+    this.numIngredientsPerSlice = numIngredientsPerSlice;
   }
 
-  public int getFourthValue() {
-    return fourthValue;
+  public Integer getMaxCellsPerSlice() {
+    return maxCellsPerSlice;
   }
 
-  public void setFourthValue(int fourthValue) {
-    this.fourthValue = fourthValue;
+  public void setMaxCellsPerSlice(Integer maxCellsPerSlice) {
+    this.maxCellsPerSlice = maxCellsPerSlice;
   }
 
-  public Object getData() {
+  public List<List<Cell>> getData() {
     return data;
   }
 
-  public void setData(Object data) {
+  public void setData(List<List<Cell>> data) {
     this.data = data;
   }
-
-  @Override
-  public String toString() {
-    return "InputData{" + "firstValue=" + firstValue + ", secondValue=" + secondValue
-        + ", thirdValue=" + thirdValue + ", fourthValue=" + fourthValue + ", data=" + data
-        + '}';
-  }
-
 }

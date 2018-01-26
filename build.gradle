@@ -39,8 +39,8 @@ apply plugin: 'application'
 apply plugin: 'eclipse'
 
 jar {
-	baseName = 'hash-code-starter-project'
-	version = '0.0.1'
+    baseName = 'hash-code-test-project-2018'
+    version = '0.0.1'
 }
 
 sourceCompatibility = 1.8
@@ -50,7 +50,7 @@ repositories {
     // Use jcenter for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {

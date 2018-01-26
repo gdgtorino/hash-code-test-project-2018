@@ -39,4 +39,4 @@ include 'api'
 include 'services:webservice'
  */
 
-rootProject.name = 'hash-code-starter-project'
+rootProject.name = 'hash-code-test-project-2018'

@@ -24,10 +24,52 @@
 package it.gdgtorino.hashcode.model;
 
 /**
- * This is just a place-holder model class.
+ * Cell model class; a cell in the pizza contains a single ingredient.
  *
  * @author Marco Terrinoni <marco.terrinoni@gmail.com>
  */
-public class ExampleModel {
+public class Cell {
 
+  private String ingredient = null;
+  private Integer x = null;
+  private Integer y = null;
+
+  public Cell(String ingredient, Integer x, Integer y) {
+    this.ingredient = ingredient;
+    this.x = x;
+    this.y = y;
+  }
+
+  public String getIngredient() {
+    return ingredient;
+  }
+
+  public void setIngredient(String ingredient) {
+    this.ingredient = ingredient;
+  }
+
+  public Integer getX() {
+    return x;
+  }
+
+  public void setX(Integer x) {
+    this.x = x;
+  }
+
+  public Integer getY() {
+    return y;
+  }
+
+  public void setY(Integer y) {
+    this.y = y;
+  }
+
+  @java.lang.Override
+  public java.lang.String toString() {
+    return "Cell{" +
+        "ingredient='" + ingredient + '\'' +
+        ", x=" + x +
+        ", y=" + y +
+        '}';
+  }
 }

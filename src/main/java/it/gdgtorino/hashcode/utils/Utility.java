@@ -88,10 +88,10 @@ public class Utility {
         Reader r = new FileReader(file);
         Scanner s = new Scanner(r)) {
       // First line acquisition
-      inputData.setFirstValue(s.nextInt());
-      inputData.setSecondValue(s.nextInt());
-      inputData.setThirdValue(s.nextInt());
-      inputData.setFourthValue(s.nextInt());
+      inputData.setRow(s.nextInt());
+      inputData.setColumn(s.nextInt());
+      inputData.setNumIngredientsPerSlice(s.nextInt());
+      inputData.setMaxCellsPerSlice(s.nextInt());
 
       // Following lines acquisition
       /*
