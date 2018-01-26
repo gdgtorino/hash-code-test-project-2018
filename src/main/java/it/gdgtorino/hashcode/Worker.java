@@ -23,11 +23,11 @@
  */
 package it.gdgtorino.hashcode;
 
+import static it.gdgtorino.hashcode.utils.Constants.INPUT_FILENAME;
+
 import it.gdgtorino.hashcode.io.InputData;
 import it.gdgtorino.hashcode.io.OutputData;
 import it.gdgtorino.hashcode.utils.Utility;
-
-import static it.gdgtorino.hashcode.utils.Constants.INPUT_FILENAME;
 
 /**
  * The Worker class contains the implementation of the real algorithm; all the "magic" happens here.
@@ -78,13 +78,13 @@ public class Worker {
     inputData = utils.read();
 
     // Intermediate elaboration
-    outputData = new OutputData();
+//    outputData = new OutputData();
 //    outputData.setFirstValue(inputData.getFirstValue() + inputData.getSecondValue());
 //    outputData.setSecondValue(inputData.getThirdValue() - inputData.getFourthValue());
-    System.out.println("Output data created: " + outputData.toString());
+//    System.out.println("Output data created: " + outputData.toString());
 
     // Final output generation
-    utils.write(outputData);
+//    utils.write(outputData);
 
     System.out.println("Main execution correctly completed");
   }

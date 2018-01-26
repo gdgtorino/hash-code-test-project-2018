@@ -23,6 +23,9 @@
  */
 package it.gdgtorino.hashcode.io;
 
+import it.gdgtorino.hashcode.model.Cell;
+import java.util.List;
+
 /**
  * Wrapper class for input data. Just substitute the local variable with the real ones.
  *
@@ -37,18 +40,18 @@ public class InputData {
   private Integer maxCellsPerSlice = null;
 
   // Following lines data
-  private List<List<Cell>> data; // this is just a placeholder for the real data-structure
+  private List<List<Cell>> pizza; // this is just a placeholder for the real data-structure
 
   public InputData() {
   }
 
   public InputData(Integer row, Integer column, Integer numIngredientsPerSlice,
-      Integer maxCellsPerSlice, List<List<Cell>> data) {
+      Integer maxCellsPerSlice, List<List<Cell>> pizza) {
     this.row = row;
     this.column = column;
     this.numIngredientsPerSlice = numIngredientsPerSlice;
     this.maxCellsPerSlice = maxCellsPerSlice;
-    this.data = data;
+    this.pizza = pizza;
   }
 
   public Integer getRow() {
@@ -83,11 +86,22 @@ public class InputData {
     this.maxCellsPerSlice = maxCellsPerSlice;
   }
 
-  public List<List<Cell>> getData() {
-    return data;
+  public List<List<Cell>> getPizza() {
+    return pizza;
   }
 
-  public void setData(List<List<Cell>> data) {
-    this.data = data;
+  public void setPizza(List<List<Cell>> pizza) {
+    this.pizza = pizza;
+  }
+
+  @Override
+  public String toString() {
+    return "InputData{" +
+        "row=" + row +
+        ", column=" + column +
+        ", numIngredientsPerSlice=" + numIngredientsPerSlice +
+        ", maxCellsPerSlice=" + maxCellsPerSlice +
+        ", pizza=" + pizza +
+        '}';
   }
 }

@@ -34,8 +34,8 @@ public class Cell {
   private Integer x = null;
   private Integer y = null;
 
-  public Cell(String ingredient, Integer x, Integer y) {
-    this.ingredient = ingredient;
+  public Cell(char ingredient, Integer x, Integer y) {
+    this.ingredient = String.valueOf(ingredient);
     this.x = x;
     this.y = y;
   }

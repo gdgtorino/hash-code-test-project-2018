@@ -23,20 +23,23 @@
  */
 package it.gdgtorino.hashcode.utils;
 
+import static it.gdgtorino.hashcode.utils.Constants.INPUT_FILENAME;
+import static it.gdgtorino.hashcode.utils.Constants.MSG_ERR_CREATE_OUTPUT_FILE;
+import static it.gdgtorino.hashcode.utils.Constants.MSG_ERR_FIND_INPUT_FILE;
+import static it.gdgtorino.hashcode.utils.Constants.MSG_ERR_FIND_OUTPUT_FILE;
+import static it.gdgtorino.hashcode.utils.Constants.OUTPUT_FILENAME;
+
 import it.gdgtorino.hashcode.io.InputData;
 import it.gdgtorino.hashcode.io.OutputData;
+import it.gdgtorino.hashcode.model.Cell;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-
-import static it.gdgtorino.hashcode.utils.Constants.INPUT_FILENAME;
-import static it.gdgtorino.hashcode.utils.Constants.OUTPUT_FILENAME;
-import static it.gdgtorino.hashcode.utils.Constants.MSG_ERR_FIND_INPUT_FILE;
-import static it.gdgtorino.hashcode.utils.Constants.MSG_ERR_CREATE_OUTPUT_FILE;
-import static it.gdgtorino.hashcode.utils.Constants.MSG_ERR_FIND_OUTPUT_FILE;
 
 /**
  * The Utility class provide some useful methods that can be accessible from other parts of the
@@ -92,11 +95,23 @@ public class Utility {
       inputData.setColumn(s.nextInt());
       inputData.setNumIngredientsPerSlice(s.nextInt());
       inputData.setMaxCellsPerSlice(s.nextInt());
+      s.nextLine(); // force read to complete current line
 
       // Following lines acquisition
-      /*
-       * In this section the remaining lines of the input file are read
-       */
+      List<List<Cell>> pizza = new ArrayList<>();
+      for (int row = 0; row < inputData.getRow(); row++) {
+        String stringLine = s.nextLine();
+        char[] ingredients = stringLine.toCharArray();
+        List<Cell> horizontalLine = new ArrayList<>();
+        for (int column = 0; column < inputData.getColumn(); column++) {
+          Cell cell = new Cell(ingredients[column], column, row);
+          horizontalLine.add(cell);
+        }
+        pizza.add(horizontalLine);
+      }
+
+      // Store pizza in input data object
+      inputData.setPizza(pizza);
     } catch (IOException ex) {
       System.err.println(MSG_ERR_FIND_INPUT_FILE);
       throw new RuntimeException(MSG_ERR_FIND_INPUT_FILE, ex);
